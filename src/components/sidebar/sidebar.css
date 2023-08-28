@@ -1,0 +1,27 @@
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Coiny&family=Lumanosimo&family=PT+Serif&family=Sono:wght@500&display=swap");
+
+#sidebar {
+  background: #171e30;
+  font-family: Sono;
+  padding: 20px;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+.sidebar__link {
+  color: #f3f4f6;
+  padding: 10px;
+  border-radius: 3px;
+  margin-bottom: 5px;
+}
+
+.sidebar__link > a {
+  text-decoration: none;
+  color: #a5aaad;
+  font-weight: 700;
+}
+
+.sidebar__link > a:hover {
+  text-decoration: none;
+  color: #3ab54a;
+  font-weight: 700;
+}
