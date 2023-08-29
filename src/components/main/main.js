@@ -4,20 +4,14 @@ import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 
 const Main = () => {
-  const totalDaysOfClass = 236; // Total number of class days
-  const [daysPresent, setDaysPresent] = useState(30);
-
-  const lastAttendanceDate = localStorage.getItem("lastAttendanceDate");
-  const currentDate = new Date().toLocaleDateString();
-
-  const isButtonDisabled = lastAttendanceDate === currentDate;
+  const totalDaysOfClass = 236;
+  const [daysPresent, setDaysPresent] = useState(40);
 
   const percentage = (daysPresent / totalDaysOfClass) * 100;
 
   const handleMarkAttendance = () => {
-    if (!isButtonDisabled && daysPresent < totalDaysOfClass) {
+    if (daysPresent < totalDaysOfClass) {
       setDaysPresent(daysPresent + 1);
-      localStorage.setItem("lastAttendanceDate", currentDate);
     }
   };
   return (
@@ -41,7 +35,7 @@ const Main = () => {
           </div>
           <div className="card">
             <div className="card_inner">
-              <p className="text-primary-p">Date:28/08/2023</p>
+              <p className="text-primary-p">Date:29-08-2023</p>
             </div>
           </div>
         </div>
@@ -68,11 +62,8 @@ const Main = () => {
                   id="button"
                   type="button"
                   onClick={handleMarkAttendance}
-                  disabled={isButtonDisabled}
                 >
-                  {isButtonDisabled
-                    ? "Mark Attendance (Next Day)"
-                    : "MARK ATTENDANCE"}
+                  MARK ATTENDANCE
                 </button>
               </div>
             </div>
